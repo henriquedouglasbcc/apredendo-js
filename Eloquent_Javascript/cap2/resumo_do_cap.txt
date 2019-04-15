@@ -1,0 +1,125 @@
+#Variáveis
+
+    var ten = 10;
+    console.log(ten * ten);
+    //100
+
+As variáveis podem ser qualquer palavra menos as variáveis, não pode haver espaçoes e não pode incluir pontuação, exceto: $ e _
+
+
+#Palavras Chaves e Palavras reservadas
+
+    Palavras com significado especial como var não pode ser usadas como nome de variáveis.
+
+#Funções
+
+    function => é um pedaço de programa envolvido por um valor.
+
+    Exercutar uma função é chamada de invocar, chamar ou aplicar uma função.
+
+    A função basicamente é a própria função e você pode passar argumentos para ela.
+
+#Função console.log
+    É utilizada para saída de valores no console do navegador.
+
+#Função prompt e confirm
+
+    Essa função fica responsável por retornar um true ou false.
+
+
+#fluxo de controle
+
+    #Função Number();
+        Essa função é responsável por um converter um valor para um número;
+
+    #if
+        É responsável pela a execução da condição;
+        if(n > 1){
+            return true;
+        }
+        else{
+            retur false;
+        }
+
+    #Loops while e do while;
+        o while é um laço de repetição, exigindo um contador para que no final da instrução seja necessário sair dessa instrução e seguir os passos seguintes.
+        
+        ex.:
+
+        var cont = 0;
+        while(cont < 10){
+            console.log(cont);
+            cont++;
+        }
+
+        No caso do do while é quando você precisa executar a instrução uma vez e caso essa instrução ainda não seja de acordo com que você solicitou ele entrará no laço de repetição até quando a condição for atendida.
+
+        var condicao = true;
+        do{
+            if(n < 1){
+                condicao = false;
+            }
+        }while(condicao == false);
+
+    #Loops for
+        Essa instrução é quando o programador sabe o tamanho da instrução (falando a grosso modo);
+
+        for(var i=0; i < 10; i++){
+            console.log('olá mundo!');
+        }
+    
+    #Quebrando um laço de um Loops
+        Nesse caso, podemos introduzir o break;
+
+        for(var i = 0; ; i++){
+            if(i % 7 == 0){
+                console.log(i);
+                break;
+            }
+        }
+
+    #Atualizando variáveis suncitamente
+        Existe alguns modos de atualizar uma variável, mas podemos utilizar +=, *=, -=, +=;
+
+        Esses operadores são essenciais para o seu código ficar mais limpo.
+
+        Exemplo:
+            var num1 = 10;
+            num1 = num1 + 2;
+            console.log(num1);
+            //12
+
+            Podemos agora introduzir esse operador
+            var num1 = 10;
+            num1 += 2;
+            console.log(num1);
+            //12
+
+            No segundo exemplo, percebemos que o código fica mais limpo.
+    
+    #Switch
+        O switch é utilizado quando nós queremos resolver o problema de forma mais direta.
+
+        if(variable == "value1") action1();
+        else if(variable == "value2") action2();
+        else if(variable == "value3") action3();
+        else defaultAction();
+
+        Utilizando o switch o nosso código fica bem mais fácil e limpo.
+
+        switch(prompt("Qual é o tempo que você gosta?")){
+            case "chuvoso":
+                console.log("Lembre-se de trazer um guarda-chuva");
+                break;
+            case "ensolarado":
+                console.log("Utilize roupa leves");
+                break;
+            case "nublado":
+                console.log("Vá para fora!");
+            default:
+                console.lgo("Tipo de tempo desconhecido!");
+                break;
+        }
+
+
+

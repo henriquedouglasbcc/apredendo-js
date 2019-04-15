@@ -1,0 +1,134 @@
+#Funções
+
+    O uso de funções é fundamental para o JS.
+
+    Uma função é um conjunto de instruções que retorna um valor ou não.
+
+    Exemplo.:
+        var square = function(x){
+            retorna x * x;
+        }
+
+        console.log(square(12));
+        //144
+
+#Escopo Aninhado
+    Funções também pode ser criadas dentro de outras funções;
+
+        var ladscape = function(){
+            var = result = "";
+            var flat = function(size){
+                for(var count=0; cont < size; count++){
+                    result += "_";
+                }
+            };
+
+        var mountain = function(size){
+            result = "/";
+            for(var count = 0; count < size; count++){
+                result += "'";
+            }
+            result += "\\";
+        };
+
+        flat(3);
+        mountain(4);
+        flat(6);
+        mountain(1);
+        flat(1);
+        return result
+
+        };
+
+        console.log(ladscape);
+
+        A função flat e mountain podem ver a variável result porque elas estão dentro do mesmo escopo.
+
+        A palavra-chave let cria uma variável local dentro de um bloco, ao invés de utilizarmos a palavra-chave var.
+
+        Podemos passar valores de funções para outras funções.
+
+        Exemplo.:
+            var launchMissiles = function(value){
+                missileSystem.lauch("now");
+            }
+
+            if(safeMode){
+                launchMissiles = function(value){ /* no nothing */}
+            }
+
+#Argumentos opcionais
+    As funções recebem argumentos, caso você passe mais argumentos que o necessário, o JS ingnora-os e executa a instrução, caso você passe menos argumentos do que o necessário, os argumentos restantes receberão o valor de undefined.
+
+    Ex.:
+
+    function power(base, expoent){
+        if(expoent == undefined){
+            expoent = 2;
+        }
+        
+        let result = 1;
+        
+        for(let count = 0; count < expoent; count++){
+            result *= base;
+        }
+
+        return result;
+    }
+
+    console.log(power(4));
+    // 16
+
+    console.log(power(4, 3));
+    // 64
+
+#Closure
+
+    É uma habilidade que trata funções como valores, ou seja, as funções são recriadas assim que toda vez uma função é invocada.
+
+    Exemplo:
+
+        function wrapValue(n){
+            let localVariable = n;
+            return function(){
+                return localVariable;
+            }
+        }
+
+        var wrap1 = wrapValue(2);
+        console.log(wrap1());
+        //2
+
+        var wrap2 = wrapValue(1);
+        console.log(wrap2());
+        //1
+
+    Podemos, com uma pequena mudança, transformar o exemplo anterior, possibilitando a criação de funções que se multiplicam por uma quantidade arbitrária.
+
+        function multiplier(factor){
+            return function(number){
+                return number * factor;
+            }
+        }
+
+        var twice = multiplier(2);
+        console.log(twice(5));
+        // 10;
+
+#Recursão
+    A recursão se dá quando uma função invoca a si mesma, contando que tenhamos cuidado para não sobrecarregar a pilha de chamadas.
+
+    function power(base, expoent){
+        if(expoent == 1){
+            return 1;
+        }
+        else{
+            base * power(base, expoent-1);
+        }
+    }
+
+    console.log(power(2, 3));
+    // 8
+
+
+
